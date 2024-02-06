@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${titulo}"></title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<h1
+			class="text-secondary border border-success border-top-0 border-left-0 border-right-0"
+			th:text="${titulo}"></h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>codigo</th>
+					<th>nombre</th>
+					<th>marca</th>
+					<th>proteinas</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="alimento: ${alimentos}">
+				    <td th:text="${alimento.codigo}"></td>
+				    <td th:text="${alimento.nombre}"></td>
+				    <td th:text="${alimento.marca}"></td>
+				    <td th:text="${alimento.proteinas}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
